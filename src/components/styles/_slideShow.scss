@@ -1,0 +1,36 @@
+@import './variables';
+
+
+
+.cardImg{
+    height: 200px;
+}
+
+.sliderBg{
+    background: $bestBlueColor;
+    height: 100px;
+    .sliderTitle{
+        color: whitesmoke;
+        font-size: 18px;
+    }
+}
+
+
+/* ======================= MEDIA QUERY ===================== */
+
+@media only screen and (max-width: 600px){
+    .buySlider{
+        margin-top: 20px;
+        .sliderBg{
+            height: 75px;
+        }
+        .cardImg{
+            height: 130px;
+        }
+
+        .sliderTitle{
+            font-size: 13px;
+        }
+
+    }
+}

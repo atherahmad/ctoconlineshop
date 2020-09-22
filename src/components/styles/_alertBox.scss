@@ -1,0 +1,41 @@
+@import './variables';
+
+
+.alertBox{
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 22%; /* Full width */
+    height: 22%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    // background-color: rgba(216, 216, 216, 0.822);
+    background: #eee;
+    margin: 400px 750px ;
+    box-shadow: 0 10px 120px rgb(0, 0, 0);
+    transition: 0.5s;
+
+    .alertBox-head{
+        background: $bestOrangeColor;
+        height: 70px; 
+    }
+
+      .alertBox-head-title{
+            background: white;
+            color: $bestBlueColor;
+             box-shadow: 3px 4px 20px rgb(0, 0, 0);
+            width: 300px;
+            margin: 0 auto;
+            margin-top: -30px;
+            padding: 10px;
+            font-size: 25px;
+        }
+    .alertBoxTilte{
+        margin-top: 5px;
+        margin-bottom: 15px;
+        padding: 10px;
+        align-items: center;
+        font-size: 15px;
+    }
+}

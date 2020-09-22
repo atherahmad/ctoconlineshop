@@ -1,0 +1,84 @@
+@import './variables';
+
+@mixin btnVerticalSlider($fontSize) {
+    display: block;
+    border: none;
+    font-size: $fontSize;
+    outline: none;
+    margin: 0 auto;
+    padding: 10px;
+    cursor: pointer;
+    color: $bestRedColor;
+    background: transparent;
+    opacity: 0.9;
+        &:hover{
+            color: $bestRedColor;  
+            opacity: 1;
+        }
+} 
+
+.p-s-show{
+    width: 100%;
+}
+
+.myThumb {
+    width: 100%;
+    outline: none;
+} 
+
+.my{
+    width: 100%;
+    height: 360px;
+    background: transparent;
+    overflow: hidden;
+}
+
+/* .myThumb img{
+    width:100%;
+    height: 100px;
+    object-fit: cover;
+}  */
+
+.up{
+ @include btnVerticalSlider(60px);
+
+}
+
+ .down{
+    @include btnVerticalSlider(60px);
+}
+
+
+
+/*  */
+
+@media only screen and (max-width: 600px){
+     .up{
+        @include btnVerticalSlider(20px);
+        margin-left: -20px;
+    }
+    .down{
+        @include btnVerticalSlider(20px);
+        margin-left: -20px;
+    }   
+    .myThumb {
+        width: 100%;
+        // height: 250px;
+        color: white;
+        margin-top: 10px;
+        border-radius: 20px;
+        outline: none;
+    } 
+    .my{
+        width: 80px;
+        height: 250px;
+        border-radius: 30px;
+        background: transparent;
+        // overflow: hidden;
+    }
+    .myThumb img{
+        width:100%;
+        height: 80px;
+        outline: none;
+    } 
+}

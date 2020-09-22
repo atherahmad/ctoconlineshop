@@ -1,0 +1,33 @@
+@import './variables';
+
+
+.contact{
+    height: 88vh;
+    background-image: url('../../images/gmail.png');
+    background-position: 500px 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+@media only screen and (max-width: 600px){
+    .contact{
+
+    background-image: url('../../images/gmail.png');
+    background-position: 0px 620px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    h2{
+        font-size: 22px;
+    }
+    p{
+        font-size: 14px;
+    }
+    label{
+        font-size: 14px;
+    }
+    button{
+        font-size: 16px;
+    }
+}
+}

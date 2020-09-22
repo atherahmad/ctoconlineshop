@@ -1,0 +1,302 @@
+@import './variables';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.my-container{
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 60%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    // background-color: rgba(216, 216, 216, 0.822);
+    background: #eee;
+    margin: 0px 400px ;
+    box-shadow: 0 10px 120px rgb(0, 0, 0);
+    transition: 0.5s;
+
+    .head-one{
+        width: 100%;
+        height: 120px;
+        margin-top: -10px;
+        background: $bestBlueColor;
+        box-shadow: $lightBoxShadow;
+    }
+    .head-tow{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        box-shadow: $mediumBoxShadow;
+        width: 60%;
+        height: 90px;
+        background: whitesmoke;
+        margin: 0 auto;
+        margin-top: -50px;
+       margin-bottom: 30px;
+        h2{
+            font-size: 40px;
+            font-weight: 300;
+        }
+    }
+
+    .cancelBtn{
+        display: flex;
+        background: transparent;
+        border-radius: 100%;
+        color: whitesmoke;
+        transition: 0.3s;
+        margin: 10px;
+            &:hover{
+            background: $bestRedColor;
+            box-shadow: $hardBoxShadow;
+            color: white;
+            transition: 0.3s;
+            }
+    }
+   
+
+    .pd-row-1{
+        // border: 3px solid black;
+        width: 100%;
+        height: 450px;
+        display: flex;
+        flex-direction: row;
+        // background: rgba(255, 0, 0, 0.644);
+      
+
+        .largImage{
+            width: 100%;
+            height: 100%;
+           img{
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+               object-position: center;
+           }
+        }
+        .thumbNailImage{
+            flex: 20%;
+            justify-content: center;
+            margin: 0 10px;
+        }
+    }
+
+    .but-big{
+        text-align: center;
+        width: 100px;
+        background: $bestRedColor;
+        box-shadow: $lightBoxShadow;
+        color: whitesmoke;
+        border: none;
+        transition:width 0.6s;
+        opacity: 0.9;
+    
+            &:hover{
+            width: 650px;
+            background: rgba(255, 0, 0, 0.644);
+            box-shadow: $hardBoxShadow;
+            color: whitesmoke;
+            opacity: 1;
+        }
+    }
+
+    
+
+    .content{
+        width: 100%;
+        margin-top: 10px;
+        color: rgb(0, 0, 0);    
+        .content h2{
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 32px;
+            font-weight: 700;
+            text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.342);
+        }
+        .p-d-content{
+            margin-top: 20px;
+            height: 250px;
+            .innerContent{
+                display: flex;
+                justify-content: space-around;
+                text-align: left;
+                padding: 10px;
+                span{
+                    font-size: 15px;
+                    font-weight: bold;
+                      margin-left: 10px;
+                }
+                 .p-d-input{
+                    border: none;
+                    width: 300px;
+                    background: none;
+                }
+            }
+
+           
+            .des{
+                border-top: 2px solid $bestBlueColor;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                padding: 10px;
+                .desOne{
+                    display: flex;
+                    justify-content: space-around;
+                }
+                span{
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+                 .p-d-input{
+                    border: none;
+                    width: 200px;
+                    background: none;
+                }
+                p{
+                    font-size: 14px;
+                    padding: 20px;
+                }
+            }
+
+        }
+
+        
+
+      
+        .myIcons:nth-child(2){
+            color: $bestRedColor;
+        }
+      
+        
+        .myIcons:hover{
+            font-size: 40px;
+            text-shadow: $hardBoxShadow;
+            transform: translateY(-10px);
+            transition: 0.6s;
+        }
+
+        .content h4{
+            display: flex;
+            font-size: 17px;
+            padding: 30px;
+        }
+    }
+   
+}
+         .box-exeed{
+             height: 150px;
+            overflow: scroll;
+
+        }
+        
+
+        .myIcon{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .myIcons{
+            font-size: 30px;
+            transition: 0.4s;
+            padding: 10px;
+            
+        }
+
+
+/*================================== Media Query ============*/
+@media only screen and (max-width: 600px) {
+
+
+    .my-container{
+        width: 400px; /* Full width */
+        height: 90%; /* Full height */
+        margin: 20px auto ;
+        .head-one{
+            height: 100px;
+        }
+        .head-tow{
+            height: 60px;
+            margin-top:-34px;
+
+            h2{
+                font-size: 20px;
+            }
+        }
+        .pd-row-1{
+            height: 350px;
+            .largImage{
+                width: 280px;
+                height: 300px;
+            }
+            .myThumb {
+                width: 50px;
+            }
+        }
+
+
+        .content{
+            width: 300px;
+            height: 250px;
+        
+        .p-d-content{
+            margin-top: 20px;
+            height: 0px;
+            .innerContent{
+                display: flex;
+                flex-wrap: wrap;
+                text-align: left;
+                padding: 10px;
+                span{
+                    font-size: 15px;
+                    font-weight: bold;
+                      margin-left: 10px;
+                }
+                 .p-d-input{
+                    border: none;
+                    width: 160px;
+                    background: none;
+                }
+            }
+
+           
+            .des{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                border-top: 2px solid $bestBlueColor;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                padding: 10px;
+                .desOne{
+                    flex-wrap: wrap;
+                }
+                span{
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+                 .p-d-input{
+                    border: none;
+                    width: 200px;
+                    background: none;
+                }
+                p{
+                    font-size: 14px;
+                    padding: 20px;
+                }
+            }
+
+        }
+        
+ 
+    }
+    }
+}

@@ -1,0 +1,65 @@
+@import './variables';
+
+.mySignin{
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    
+    .mySignin-form{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        transition: 0.6s;
+    
+        .h2-box{
+            background: $bestBlueColor;
+             box-shadow: $lightBoxShadow;
+            height: 130px;
+
+        }
+
+        .h2-box-signup{
+            background: $bestRedColor;
+             box-shadow: $lightBoxShadow;
+            height: 130px;
+        }
+        h2{
+            color: $bestBlueColor;
+            background: white;
+            box-shadow: $mediumBoxShadow;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            font-size: 40px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 500;
+            margin: 0 auto;
+            margin-top: -45px;
+            margin-bottom: 60px;
+            padding: 20px;
+          
+        }
+       button{
+           margin: 50px auto;
+
+       }
+
+
+        .myText{
+            font-size: 16px;
+            color: $bestRedColor;
+        }
+        
+        .L{
+            color: $bestBlueColor;
+            font-weight: 200;
+         }
+          .L2{
+            color: $bestRedColor;
+
+         }
+    }
+}

@@ -1,0 +1,31 @@
+@import './variables';
+
+.s-m-title{
+    .popover-header {
+        padding: .5rem .75rem;
+        width: 200px;
+        margin-bottom: 0;
+        font-size: 1rem;
+        text-align: center;
+        background-color: $bestRedColor;
+        border-bottom: 1px solid #ebebeb;
+        border-top-left-radius: calc(.3rem - 1px);
+        border-top-right-radius: calc(.3rem - 1px);
+        outline: none;
+    }
+}
+
+.s-m-b-title{
+    .popover-header {
+        padding: .5rem .75rem;
+        width: 200px;
+        margin-bottom: 0;
+        font-size: 1rem;
+        text-align: center;
+        background-color: $bestBlueColor;
+        border-bottom: 1px solid #ebebeb;
+        border-top-left-radius: calc(.3rem - 1px);
+        border-top-right-radius: calc(.3rem - 1px);
+        outline: none;
+    }
+}

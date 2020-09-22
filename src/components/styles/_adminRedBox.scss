@@ -1,0 +1,61 @@
+@import './variables';
+
+.adminRedBox{
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 50%; /* Full width */
+    // height: 50%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    // background-color: rgba(216, 216, 216, 0.822);
+    background: #eee;
+    margin: 150px 480px ;
+    box-shadow: 0 10px 120px rgb(0, 0, 0);
+    transition: 0.5s;
+       
+
+    .adminRedBox-head{
+        background: $bestRedColor;
+        height: 100px; 
+    }
+
+     .adminBlueBox-head{
+        background: $bestBlueColor;
+        height: 100px; 
+    }
+
+      .adminRedBox-head-title{
+            background: white;
+            color: $bestBlueColor;
+             box-shadow: 3px 4px 20px rgb(0, 0, 0);
+            width: 300px;
+            margin: 0 auto;
+            margin-top: -30px;
+            padding: 10px;
+            font-size: 25px;
+        }
+    .adminRedBoxTilte{
+        margin-top: 5px;
+        margin-bottom: 15px;
+        padding: 10px;
+        align-items: center;
+        font-size: 15px;
+    }
+}
+
+  .adminPopupContent{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        margin: 30px;
+    }
+    .bg-gray{
+        background: rgb(214, 214, 214);
+        padding: 10px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.219);
+    }
+
+   
+   

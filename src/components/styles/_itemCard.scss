@@ -1,0 +1,79 @@
+@import './variables';
+
+    .myCard{
+        width: 350px;
+        height: 300px;
+        // border: 1px solid rgba(0, 0, 0, 0.404);
+        box-shadow: $lightBoxShadow;
+        margin: 5px;
+        background: rgb(163, 163, 163);
+        .myCardImage{
+            width: 100%;
+            height:180px;
+        }
+    
+        .myCardBody{
+            h2{
+                font-size: 24px;
+                margin: 5px;
+            }
+            p{     
+                margin: 10px;
+                font-size: 10px;
+                color: whitesmoke;
+            }
+
+            button{
+                font-size: 13px;
+                border: none;
+                padding: 5px;
+                background: $bestBlueColor;
+                color: whitesmoke;
+                margin: 10px;
+            }
+        }
+    }
+
+
+
+
+    @media only screen and (max-width: 600px) {
+        
+    .myCard{
+            width: 80px;
+            height: 100px;
+            // border: 1px solid rgba(0, 0, 0, 0.404);
+            box-shadow: $lightBoxShadow;
+            margin: 5px;
+            background: rgb(163, 163, 163);
+            .myCardImage{
+                width: 100%;
+                height:50px;
+            }
+        
+            .myCardBody{
+                h2{
+                    font-size: 9px;
+                    margin: 0;
+                }
+                p{     
+                    font-size: 5px;
+                    margin: 0;
+                    color: whitesmoke;
+                }
+
+                button{
+                    font-size: 4px;
+                    border: none;
+                    padding: 5px;
+                    background: $bestBlueColor;
+                    color: whitesmoke;
+                    margin: 0;
+                }
+            }
+        }
+
+
+    }
+
+  

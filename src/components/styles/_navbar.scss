@@ -1,0 +1,45 @@
+@import './variables';
+
+
+.navTitle{
+    letter-spacing: 2px;
+    transition: 0.4s;
+    color: $bestBlueColor;
+  &:hover{
+    letter-spacing: 5px;
+    text-shadow: 0 2px 10px whitesmoke;
+    transition: 0.6s;
+  }
+
+}
+
+.navB{
+  color: $bestBlueColor;
+  letter-spacing: 2px; 
+  .navBRed{
+      color: $bestRedColor;
+  }
+}
+
+
+   
+@media only screen and (max-width: 420px){
+
+
+.navLogo img{
+  width: 150px;
+  height: 50px;
+}
+
+
+  .navTitle{
+      letter-spacing: 2px;
+      font-size: 14px;
+    &:hover{
+      letter-spacing: 4px;
+    }
+
+  }
+
+
+}

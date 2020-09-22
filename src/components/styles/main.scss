@@ -1,0 +1,38 @@
+@import './products';
+@import './variables';
+@import './slideShow';
+@import './productDetails';
+@import './pictureSlider';
+@import './landingPage';
+@import './sellComponent';
+@import './navbar';
+@import './itemCard';
+@import './signin';
+@import './footer';
+@import './messagePopup';
+@import './unitedCard';
+@import './account';
+@import './contact';
+@import './resetModal';
+@import './activeMessage';
+@import './alertBox';
+@import './smallMessage';
+@import './productDetaileMaessage';
+@import './reportProduct';
+@import './adminRedBox' ;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sText{
+    color: $bestRedColor;
+    font-size: 12px;
+}
+
+.darkWhite{
+    background: whitesmoke;
+}
+

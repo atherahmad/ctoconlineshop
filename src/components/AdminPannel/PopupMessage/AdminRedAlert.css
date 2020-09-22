@@ -1,0 +1,268 @@
+.bestBlueColor {
+  background: #11213b;
+}
+
+.bestRedColor {
+  background: #b72826;
+}
+
+.myRedCircleButton {
+  background: #ff8b0d;
+  border-radius: 100%;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border: none;
+}
+
+.myBlueButton-sm {
+  width: 100px;
+  height: 30px;
+  color: #fff;
+  background: #11213b;
+  border: none;
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.363);
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.363);
+}
+
+.myBlueButton-sm:hover {
+  opacity: 1;
+  -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.877);
+          box-shadow: 0 20px 30px rgba(0, 0, 0, 0.877);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.myRedButton-sm {
+  width: 100px;
+  height: 30px;
+  color: #fff;
+  background: #b72826;
+  border: none;
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.363);
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.363);
+}
+
+.myRedButton-sm:hover {
+  opacity: 1;
+  -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.877);
+          box-shadow: 0 20px 30px rgba(0, 0, 0, 0.877);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.myBlueButton-lg {
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  background: #11213b;
+  border: none;
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.363);
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.363);
+}
+
+.myBlueButton-lg:hover {
+  opacity: 1;
+  -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.877);
+          box-shadow: 0 20px 30px rgba(0, 0, 0, 0.877);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.myOrabgeButton-lg {
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  background: #ff8b0d;
+  border: none;
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.363);
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.363);
+}
+
+.myOrabgeButton-lg:hover {
+  opacity: 1;
+  -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.877);
+          box-shadow: 0 20px 30px rgba(0, 0, 0, 0.877);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.myFavButton {
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  background: #ff8b0d;
+  border: none;
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.363);
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.363);
+}
+
+.myFavButton:hover {
+  opacity: 1;
+  -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.877);
+          box-shadow: 0 20px 30px rgba(0, 0, 0, 0.877);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.myGreenButton-lg {
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  background: #7ec544;
+  border: none;
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.363);
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.363);
+}
+
+.myGreenButton-lg:hover {
+  opacity: 1;
+  -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.877);
+          box-shadow: 0 20px 30px rgba(0, 0, 0, 0.877);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.myRedButton-lg {
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  background: #b72826;
+  border: none;
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.363);
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.363);
+}
+
+.myRedButton-lg:hover {
+  opacity: 1;
+  -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.877);
+          box-shadow: 0 20px 30px rgba(0, 0, 0, 0.877);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.adminRedAlert {
+  display: block;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 70%;
+  /* Full width */
+  height: 70%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background: #444;
+  margin: 400px 750px;
+  -webkit-box-shadow: 0 10px 120px black;
+          box-shadow: 0 10px 120px black;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.adminRedAlert .adminRedAlert-head {
+  background: #ff8b0d;
+  height: 70px;
+}
+
+.adminRedAlert .adminRedAlert-head-title {
+  background: white;
+  color: #11213b;
+  -webkit-box-shadow: 3px 4px 20px black;
+          box-shadow: 3px 4px 20px black;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: -30px;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.adminRedAlert .adminRedAlertTilte {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 15px;
+}
+/*# sourceMappingURL=AdminRedAlert.css.map */

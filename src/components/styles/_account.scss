@@ -1,0 +1,31 @@
+@import './variables';
+
+
+nav > .nav-link {
+    color: $bestBlueColor ;
+}
+
+.milad .nav-link {
+    color: white ;
+    background: $bestBlueColor;
+    margin-top: 10px;
+}
+
+.milad .nav-pills .nav-link {
+    border-radius: 0;
+    margin: 5px;
+}
+
+.milad .nav-pills .nav-link.active {
+    color: white;
+    background-color:$bestRedColor;
+}
+
+
+@media only screen and (max-width:420px){
+        .milad .nav-link {
+            width: 100px;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+}   

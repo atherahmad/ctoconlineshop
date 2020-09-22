@@ -1,0 +1,95 @@
+.unitedWrap{
+    margin: 10px;
+    transition: 0.5s;
+    .unitedCards{
+        width: 200px;
+        height: 320px;
+        background: $bestBlueColor;
+        box-shadow: $lightBoxShadow;
+        color: $lightTextGray;
+        margin-bottom: 10px;
+        transition: 0.5s;
+    }
+    &:hover {
+        box-shadow: $mediumBoxShadow;
+        color: whitesmoke;
+        margin-top: -10px;
+        transition: 0.5s;
+    }
+    .unitedImgBox{
+        width: 200px;
+        height: 200px;
+    }
+    
+    .unitedImgBox button{
+        display: flex;
+        color: yellow;
+        font-size: 20px;
+        opacity: 0.9;
+        outline: none;
+        border: none;
+    }
+    
+    .unitedPrice{
+        display: flex;
+    }
+    
+   .unitedContent h3{
+        font-size: 15px;
+        font-weight: 700;
+        padding: 5px;
+        margin-bottom: 0;
+    }
+
+    .unitedPrice h5{
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px;
+        color: whitesmoke;
+        margin-top: -20px;
+        margin-left: -10px;
+        background: $bestRedColor;
+        border-radius: 0 20px 20px 0;
+        box-shadow: $lightBoxShadow;
+    }
+
+ 
+}
+
+
+
+@media only screen and (max-width:600px){
+    .unitedWrap{
+    margin: 0px;
+
+    .unitedCards{
+        width: 150px;
+        height: 215px;
+    }
+    .unitedImgBox{
+        width: 100%;
+        height: 120px;
+    }
+    
+    .unitedImgBox button{
+        font-size: 10px;
+    }
+
+    .unitedPrice h5{
+        font-size: 8px;
+        font-weight: 400;
+        padding: 6px;
+        margin-top: -13px;
+    }
+      
+   .unitedContent h3{
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+
+ 
+}
+}
+
+

@@ -1,0 +1,200 @@
+$btnRedColor : rgb(119, 20, 20);
+$btnPinkColor : pink;
+
+$lightTextGray:rgb(122, 121, 121);
+
+$lightBoxShadow : 0 8px 12px  rgba(0, 0, 0, 0.363);
+$mediumBoxShadow : 0 20px 30px  rgba(0, 0, 0, 0.877);
+$hardBoxShadow : 10px 10px 10px black;
+
+$bestBlueColor : #11213b;
+$bestRedColor : #b72826;
+
+$bestOrangeColor:rgb(255, 139, 13);
+$bestGreenColor:rgb(126 , 197, 68);
+
+.bestBlueColor{
+    background: #11213b;
+}
+
+
+.bestRedColor{
+    background: #b72826;
+}
+
+.myRedCircleButton{
+    background: $bestOrangeColor;
+    border-radius: 100%;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+
+
+@mixin ItemCard($width,$height,$cardImage,$h2Size) {
+    
+    .myCard{
+        width: $width;//280px
+        height: $height;//280px
+        border: 1px solid rgba(0, 0, 0, 0.404);
+        box-shadow: $lightBoxShadow;
+        margin: 5px;
+        .myCardImage{
+            width: 100%;
+            height:$cardImage ;//150px
+        }
+    
+
+        h2{
+            font-size: $h2Size;//24px
+            margin: 5px;
+        }
+        p{     
+            margin: 10px;
+            font-size: 10px;
+            color: whitesmoke;
+        }
+
+        button{
+            font-size: 13px;
+            border: none;
+            padding: 5px;
+            background: $bestBlueColor;
+            color: whitesmoke;
+            margin: 10px;
+            user-select: none;
+        }
+    }
+}
+
+@mixin myButton($background,$color,$width,$height) {
+    width: $width;
+    height: $height;
+    color: $color;
+    background: $background;
+    // border-radius: 10px;
+}
+
+
+.myBlueButton-sm{
+    @include myButton($bestBlueColor,#fff,100px,30px);
+    border: none;
+    outline: none;
+    opacity: 0.8;
+    transition: 0.4s;
+    user-select: none;
+        box-shadow: $lightBoxShadow;
+    &:hover{
+        opacity: 1;
+        box-shadow: $mediumBoxShadow;
+        transform: translateY(-5px);
+        transition: 0.6s;
+    }
+}
+.myRedButton-sm{
+    @include myButton($bestRedColor,#fff,100px,30px);
+    border: none;
+    outline: none;
+    opacity: 0.8;
+    transition: 0.4s;
+    user-select: none;
+    box-shadow: $lightBoxShadow;
+    &:hover{
+        opacity: 1;
+        box-shadow: $mediumBoxShadow;
+        transform: translateY(-5px);
+        transition: 0.6s;
+    }
+}
+
+.myBlueButton-lg{
+    @include myButton($bestBlueColor,#fff,120px,40px);
+    border: none;
+    outline: none;
+    opacity: 0.8;
+    transition: 0.4s;
+    font-size: 20px;
+    user-select: none;
+    box-shadow: $lightBoxShadow;
+    &:hover{
+        opacity: 1;
+        box-shadow: $mediumBoxShadow;
+        transform: translateY(-5px);
+        transition: 0.6s;
+    }
+}
+
+.myOrabgeButton-lg{
+    @include myButton($bestOrangeColor,#fff,120px,40px);
+    border: none;
+    outline: none;
+    opacity: 0.8;
+    transition: 0.4s;
+    font-size: 20px;
+    user-select: none;
+    box-shadow: $lightBoxShadow;
+    &:hover{
+        opacity: 1;
+        box-shadow: $mediumBoxShadow;
+        transform: translateY(-5px);
+        transition: 0.6s;
+    }
+}
+.myFavButton{
+    @include myButton($bestOrangeColor,#fff,100%,40px);
+    border: none;
+    outline: none;
+    opacity: 0.8;
+    transition: 0.4s;
+    font-size: 20px;
+    user-select: none;
+    box-shadow: $lightBoxShadow;
+    &:hover{
+        opacity: 1;
+        box-shadow: $mediumBoxShadow;
+        transform: translateY(-5px);
+        transition: 0.6s;
+    }
+}
+
+.myGreenButton-lg {
+    @include myButton($bestGreenColor,#fff,120px,40px);
+    border: none;
+    outline: none;
+    opacity: 0.8;
+    transition: 0.4s;
+    font-size: 20px;
+    user-select: none;
+    box-shadow: $lightBoxShadow;
+    &:hover{
+        opacity: 1;
+        box-shadow: $mediumBoxShadow;
+        transform: translateY(-5px);
+        transition: 0.6s;
+    }
+}
+
+
+.myRedButton-lg{
+    @include myButton($bestRedColor,#fff,120px,40px);
+    border: none;
+    outline: none;
+    opacity: 0.8;
+    transition: 0.4s;
+    font-size: 20px;
+    user-select: none;
+    box-shadow: $lightBoxShadow;
+
+    &:hover{
+        opacity: 1;
+        box-shadow: $mediumBoxShadow;
+        transform: translateY(-5px);
+        transition: 0.6s;
+    }
+}
+
+ .modalImageShadow{
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.767);
+    }
