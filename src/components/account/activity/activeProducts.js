@@ -18,10 +18,7 @@ function ActiveProducts(props) {
     else props.history.push("/signin");
 
     axios
-      .get(
-        `${process.env.REACT_APP_DB_HOST}/api/account/getfavoritelist/api/account/myproducts`,
-        config
-      )
+      .get(`${process.env.REACT_APP_DB_HOST}/api/account/myproducts`, config)
       .then((res) => setActiveProducts(res.data.products))
       .catch((err) => err);
   }, []);
