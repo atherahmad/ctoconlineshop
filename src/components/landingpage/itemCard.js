@@ -1,60 +1,80 @@
-import React, { useState, useEffect,useContext } from 'react';
-import Slide from 'react-reveal/Slide';
-import { POST } from "../lib/post"
-import  {GlobalContextContext} from "../Context/contextApi"
+import React, { useState, useEffect, useContext } from "react";
+import Slide from "react-reveal/Slide";
+import { POST } from "../lib/post";
+import { GlobalContextContext } from "../Context/contextApi";
 
-const ItemCard = ({ title, price, id, images, setTargetProduct, url, favoritHandler,status  }) => {
+const ItemCard = ({
+  title,
+  price,
+  id,
+  images,
+  setTargetProduct,
+  url,
+  favoritHandler,
+  status,
+}) => {
+  const [favoritized, setFavoritized] = useState(false);
+  const [profile, setProfile] = useContext(GlobalContextContext);
 
-    const [favoritized, setFavoritized] = useState(false)
-    const [profile, setProfile] = useContext(GlobalContextContext)
+  useEffect(() => {
+    if (profile.favorities.includes(id)) setFavoritized(true);
+    else setFavoritized(false);
+  }, [id, favoritized, profile.favorities]);
 
-    useEffect(() => {
-     if (profile.favorities.includes(id)) setFavoritized(true)
-         else setFavoritized(false)
-    }, [id,favoritized,profile.favorities]);
-
-    const setFvorities = async () => {
-        if (localStorage.getItem("c2c-token")) {
-            const config = {
-                headers: {
-                    'x-auth-token': localStorage.getItem('c2c-token'),
-                    'Content-Type': 'application/json'
-                }
-            }
-            let response = await POST("/api/account/setfavorities", id, config)
-            if (response.data.status === "success") {
-                setFavoritized(!favoritized)
-                favoritHandler() 
-            }
-        }
+  const setFvorities = async () => {
+    if (localStorage.getItem("c2c-token")) {
+      const config = {
+        headers: {
+          "x-auth-token": localStorage.getItem("c2c-token"),
+          "Content-Type": "application/json",
+        },
+      };
+      let response = await POST(
+        `${process.env.REACT_APP_DB_HOST}/api/account/setfavorities`,
+        id,
+        config
+      );
+      if (response.data.status === "success") {
+        setFavoritized(!favoritized);
+        favoritHandler();
+      }
     }
-    return (
-
-        <div>
-            <div className="unitedWrap ">
-                <Slide left>
-                    <div className="unitedCards" key={id} >
-                        <button className={favoritized ? "myFavButton fa fa-star " : "myFavButton fa fa-star-o "} onClick={setFvorities}></button>
-                        <div className="unitedImgBox" onClick={() => setTargetProduct(id, url,status)}
-                            style={{
-                                backgroundImage: `url(${`http://localhost:5000/avatars/${images}`})`,
-                                backgroundPosition: 'center',
-                                backgroundSize: 'cover',
-                                backgroundRepeat: 'no-repeat',
-                            }}>
-                        </div>
-                        <div className="unitedContent">
-                            <div className="unitedPrice">
-                                <h5> Price : {price}€</h5>
-                            </div>
-                            <h3>{title}</h3>
-                        </div>
-                    </div>
-                </Slide>
+  };
+  return (
+    <div>
+      <div className="unitedWrap ">
+        <Slide left>
+          <div className="unitedCards" key={id}>
+            <button
+              className={
+                favoritized
+                  ? "myFavButton fa fa-star "
+                  : "myFavButton fa fa-star-o "
+              }
+              onClick={setFvorities}
+            ></button>
+            <div
+              className="unitedImgBox"
+              onClick={() => setTargetProduct(id, url, status)}
+              style={{
+                backgroundImage: `url(${`http://localhost:5000/avatars/${images}`})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+              }}
+            ></div>
+            <div className="unitedContent">
+              <div className="unitedPrice">
+                <h5> Price : {price}€</h5>
+              </div>
+              <h3>{title}</h3>
             </div>
-        </div>
-    );
-}
+          </div>
+        </Slide>
+      </div>
+    </div>
+  );
+};
 
 export default ItemCard;
 
@@ -79,14 +99,14 @@ const setFavorite = async (id)=> {
                 'Content-Type': 'application/json'
             }
         }
-        let response = await POST("/api/account/setfavourities", id, config)
+        let response = await POST("${process.env.REACT_APP_DB_HOST}/api/account/setfavourities", id, config)
     }
 }
 
 export const actions = ( dispatch ) => ({ favoriteActions: {
     fetch: async () => {
         if( ! localStorage.getItem("c2c-token") ) return;
-        let response = await GET("/api/account/getfavourities")
+        let response = await GET("${process.env.REACT_APP_DB_HOST}/api/account/getfavourities")
         if ( response.data.status === "success" )
             dispatch({type:'fav/set',list:response.data.favourities})
     },

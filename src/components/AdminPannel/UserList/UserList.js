@@ -9,7 +9,7 @@ import UserListModal from './userListModal'
 function UserList() {
     useEffect(() => {
 
-        axios.get("/api/admin/getuserlist", {
+        axios.get(`${process.env.REACT_APP_DB_HOST}/api/admin/getuserlist`, {
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'
@@ -21,7 +21,7 @@ function UserList() {
     }, [])
 
     const getUserList=()=>{
-        axios.get("/api/admin/getuserlist", {
+        axios.get(`${process.env.REACT_APP_DB_HOST}/api/admin/getuserlist`, {
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'

@@ -1,17 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import { GlobalContextProvider } from "./components/Context/contextApi"
+import { GlobalContextProvider } from "./components/Context/contextApi";
 
-import AppSupport from './AppSupport';
+import AppSupport from "./AppSupport";
 
 function App() {
-
-    return (
-        <div className="App">
-            <GlobalContextProvider>
-                <AppSupport/>
-            </GlobalContextProvider>
-        </div>
-    );
+  return (
+    <div className="App">
+      <GlobalContextProvider>
+        <AppSupport />
+      </GlobalContextProvider>
+    </div>
+  );
 }
 export default App;

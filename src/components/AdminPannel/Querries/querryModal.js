@@ -8,7 +8,7 @@ function QuerryModal({ closeHandler, querryId,getData }) {
     const [querry,setQuerry]=useState(false)
     const [formError, setFormError]=useState(false)
     useEffect(() => {
-        axios.get(`/api/admin/querrydetails/${querryId}`, {
+        axios.get(`${process.env.REACT_APP_DB_HOST}/api/admin/querrydetails/${querryId}`, {
         headers: {
             'x-auth-token': localStorage.getItem('c2c-token'),
             'Content-Type': 'application/json'
@@ -21,7 +21,7 @@ function QuerryModal({ closeHandler, querryId,getData }) {
     const submitHandler=(e)=>{
         e.preventDefault()
         if(e.target.response.value.length<15) return setFormError(true)
-        axios.post("/api/admin/handlequerry",{id:querryId,  response:e.target.response.value, email:querry.email, name:querry.name,subject:querry.subject},{
+        axios.post(`${process.env.REACT_APP_DB_HOST}/api/admin/handlequerry`,{id:querryId,  response:e.target.response.value, email:querry.email, name:querry.name,subject:querry.subject},{
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'

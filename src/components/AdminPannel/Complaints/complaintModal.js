@@ -12,7 +12,7 @@ function ComplaintModal({ closeHandler, complainId, getComplaints}) {
 
     useEffect(() => {
 
-        axios.get(`/api/admin/complaindetails/${complainId}`, {
+        axios.get(`${process.env.REACT_APP_DB_HOST}/api/admin/complaindetails/${complainId}`, {
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ function ComplaintModal({ closeHandler, complainId, getComplaints}) {
         if(e.target.response.value==="0") return setSelectError(true)
         if(e.target.remarks.value==="") return setCommentsError(true)
 
-        axios.post("/api/admin/handlecomplain",{id:complainId, remarks:e.target.remarks.value, response:e.target.response.value},{
+        axios.post(`${process.env.REACT_APP_DB_HOST}/api/admin/handlecomplain`,{id:complainId, remarks:e.target.remarks.value, response:e.target.response.value},{
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'

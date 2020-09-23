@@ -22,13 +22,13 @@ const BuyComponent = (props) => {
 
     const getFavorities = async()=>{
         if(!localStorage.getItem("c2c-token")) return
-        let response= await GET("/api/account/getfavoritelist")
+        let response= await GET(`${process.env.REACT_APP_DB_HOST}/api/account/getfavoritelist`)
         if(response.data.status==="success")
         setProfile({ ...profile,favorities:response.data.favourities})
     }
     useEffect(() => {
         const fetchData = async () => {
-            let response = await GET("/api/buy/allproducts")
+            let response = await GET(`${process.env.REACT_APP_DB_HOST}/api/buy/allproducts`)
             setProducts(response.data.data)
         }
         fetchData()
@@ -37,21 +37,21 @@ const BuyComponent = (props) => {
     }, [])
 
     const favoritHandler = async()=>{
-        let response= await GET("/api/account/getfavoritelist")
+        let response= await GET(`${process.env.REACT_APP_DB_HOST}/api/account/getfavoritelist`)
         if (response.data.status === "success") setProfile({ ...profile,favorities:response.data.favourities})
     }
     const searchHandler=(text, category)=>{
         setFilteredProducts(false)
         console.log("search handler called", text, "category", category)
         if(!text)
-        axios.get(`/api/buy/categories/${category}`,{params: {
+        axios.get(`${process.env.REACT_APP_DB_HOST}/api/buy/categories/${category}`,{params: {
             text: text
           }})
             .then(res => {if(res.data.success) {
                 console.log(res.data.products, "in search")
                 setProducts(res.data.products)}})
             .catch(err => err)
-        else axios.get(`/api/buy/categoriessearch/${category}`,{params: {
+        else axios.get(`${process.env.REACT_APP_DB_HOST}/api/buy/categoriessearch/${category}`,{params: {
             text: text
           }})
             .then(res => {if(res.data.success) setProducts(res.data.products)})

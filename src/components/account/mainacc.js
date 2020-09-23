@@ -25,7 +25,7 @@ export default function MainAcc(props) {
     }, [])
     const getFavorities = async()=>{
         if(!localStorage.getItem("c2c-token")) return
-        let response= await GET("/api/account/getfavoritelist")
+        let response= await GET(`${process.env.REACT_APP_DB_HOST}/api/account/getfavoritelist`)
         if(response.data.status==="success")
         setProfile({ ...profile,favorities:response.data.favourities})
     }

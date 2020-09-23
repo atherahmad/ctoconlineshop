@@ -44,7 +44,7 @@ const MyProfile = (props) => {
 
         const getData = async () => {
 
-            let response = await GET("/api/account/profile")
+            let response = await GET(`${process.env.REACT_APP_DB_HOST}/api/account/profile`)
 
             if (response.data) {
                 if (response.data.status === "success") setProfile(response.data.data)
@@ -184,7 +184,7 @@ const MyProfile = (props) => {
             const formData = new FormData();
             formData.append("file", profile.profileImage)
             Object.keys(profile).forEach(key => { if (key !== "profileImage") formData.append(key, profile[key]) })
-            let response = await IMGPOST("/api/account/profile", formData, config)
+            let response = await IMGPOST(`${process.env.REACT_APP_DB_HOST}/api/account/profile`, formData, config)
 
             if ((response.data) && (response.data.status === "success")) {
                 setShowAlertBox(true)
@@ -209,7 +209,7 @@ const MyProfile = (props) => {
                     'Content-Type': 'application/json'
                 }
             }
-            let response = await POST("/api/account/profile", profile, config)
+            let response = await POST(`${process.env.REACT_APP_DB_HOST}/api/account/profile`, profile, config)
             if ((response.data) && (response.data.status === "success")) {
                 changeAlertBoxTitle("Profile updated")
                 changeAlertBoxBody("You have successfully updated your profile.")

@@ -61,7 +61,7 @@ const ProductDetails = (props) => {
                     'Content-Type': 'application/json',
                 }
             } 
-        axios.get(url ? `${url}/${id}` : `/api/buy/activeproductdetails/${id}`,config)
+        axios.get(url ? `${url}/${id}` : `${process.env.REACT_APP_DB_HOST}/api/buy/activeproductdetails/${id}`,config)
            .then(res=>{
                if(res.data.success){
                    setProduct(res.data.success)
@@ -78,7 +78,7 @@ const ProductDetails = (props) => {
                     'Content-Type': 'application/json'
                 }
             }
-            await POST("/api/account/lastseen", id, config)
+            await POST(`${process.env.REACT_APP_DB_HOST}/api/account/lastseen`, id, config)
             if(getLastSeen) await getLastSeen()
         })
 
@@ -91,7 +91,7 @@ const ProductDetails = (props) => {
 
 
     const deactivateHandler = async (id) => {
-        await axios.post("/api/products/inactiveproduct", { data: { id } }, {
+        await axios.post(`${process.env.REACT_APP_DB_HOST}/api/products/inactiveproduct`, { data: { id } }, {
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'
@@ -110,7 +110,7 @@ const ProductDetails = (props) => {
     }
     const soldHandler = (id) => {
         
-        axios.post("/api/products/soldproduct", { data: { id } }, {
+        axios.post(`${process.env.REACT_APP_DB_HOST}/api/products/soldproduct`, { data: { id } }, {
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'
@@ -126,7 +126,7 @@ const ProductDetails = (props) => {
             })
             .catch(err => err)
     }
-    const activateHandler = (id) => axios.post("/api/products/activateproduct", { data: { id } }, {
+    const activateHandler = (id) => axios.post(`${process.env.REACT_APP_DB_HOST}/api/products/activateproduct`, { data: { id } }, {
         headers: {
             'x-auth-token': localStorage.getItem('c2c-token'),
             'Content-Type': 'application/json'
@@ -141,7 +141,7 @@ const ProductDetails = (props) => {
             }
         })
         .catch(err => err)
-    const deleteHandler = (id) => axios.post("/api/products/deleteproduct", { data: { id } }, {
+    const deleteHandler = (id) => axios.post(`${process.env.REACT_APP_DB_HOST}/api/products/deleteproduct`, { data: { id } }, {
         headers: {
             'x-auth-token': localStorage.getItem('c2c-token'),
             'Content-Type': 'application/json'
@@ -171,7 +171,7 @@ const ProductDetails = (props) => {
                 'Content-Type': 'application/json'
             }
         }
-        let response = await POST("/api/account/setfavorities", id, config)
+        let response = await POST(`${process.env.REACT_APP_DB_HOST}/api/account/setfavorities`, id, config)
         if (response.data.status === "success") {
             setFavorit(!favorit)
             setShowSigninModal(false)
@@ -197,7 +197,7 @@ const reportHandler = () => setShowReportAlertBox(true)
 
 const blockHandler=(id)=>{
     console.log("block handler called")
-    axios.post("/api/admin/blockproduct", { data: { id } }, {
+    axios.post(`${process.env.REACT_APP_DB_HOST}/api/admin/blockproduct`, { data: { id } }, {
         headers: {
             'x-auth-token': localStorage.getItem('c2c-token'),
             'Content-Type': 'application/json'

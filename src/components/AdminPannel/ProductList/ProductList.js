@@ -14,7 +14,7 @@ function ProductList(props) {
     const [productId, setProductId] = useState(false)
 
     useEffect(() => {
-        axios.get("/api/admin/activeproducts", {
+        axios.get(`${process.env.REACT_APP_DB_HOST}/api/admin/activeproducts`, {
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'
@@ -43,7 +43,7 @@ function ProductList(props) {
                         else if(searchCategory==="inactiveproducts") filterType="inactive"
                             
 
-        axios.post(`/api/admin/searchproduct`,{id:searchText, type:filterType }, {
+        axios.post(`${process.env.REACT_APP_DB_HOST}/api/admin/searchproduct`,{id:searchText, type:filterType }, {
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'
@@ -57,7 +57,7 @@ function ProductList(props) {
     }
     const getProducts = (productType) => {
 
-        axios.get(`/api/admin/${productType}`, {
+        axios.get(`${process.env.REACT_APP_DB_HOST}/api/admin/${productType}`, {
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'

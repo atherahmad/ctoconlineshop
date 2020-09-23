@@ -14,7 +14,7 @@ function InactiveProducts(props) {
             'x-auth-token': localStorage.getItem('c2c-token')
         }}
             else props.history.push("/signin")
-        axios.get("/api/account/inactiveproducts",config)
+        axios.get(`${process.env.REACT_APP_DB_HOST}/api/account/inactiveproducts`,config)
         .then(res=>setInActiveProducts(res.data.products))
         .catch(err=>err)
     }, [])
@@ -23,7 +23,7 @@ function InactiveProducts(props) {
                 <Products
                     products={inActiveProducts}
                     setTargetProduct={setTargetProduct}
-                    url={`/api/account/inactiveproductdetails`}
+                    url={`${process.env.REACT_APP_DB_HOST}/api/account/inactiveproductdetails`}
                     favorit={favorit}
                     favoritHandler={favoritHandler}
                     status="inactive"

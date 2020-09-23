@@ -12,7 +12,7 @@ function Complains() {
 
     useEffect(() => {
 
-        axios.get("/api/admin/getcomplaints", {
+        axios.get(`${process.env.REACT_APP_DB_HOST}/api/admin/getcomplaints`, {
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'
@@ -24,7 +24,7 @@ function Complains() {
     }, [])
     
     const getComplaints =()=>{
-        axios.get("/api/admin/getcomplaints", {
+        axios.get(`${process.env.REACT_APP_DB_HOST}/api/admin/getcomplaints`, {
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'

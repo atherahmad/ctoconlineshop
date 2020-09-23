@@ -2,7 +2,6 @@
   "name": "ather",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://finalprojectbe.herokuapp.com/",
   "dependencies": {
     "@material-ui/core": "^4.9.7",
     "@material-ui/icons": "^4.9.1",
@@ -13,6 +12,7 @@
     "bootstrap": "^4.4.1",
     "bootstrap-icons": "^1.0.0-alpha3",
     "emotion": "^10.0.27",
+    "env-cmd": "^10.1.0",
     "font-awesome": "^4.7.0",
     "form-data": "^3.0.0",
     "react": "^16.13.1",
@@ -31,10 +31,10 @@
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "env-cmd -e dev react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
+    "build": "env-cmd -e prod react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

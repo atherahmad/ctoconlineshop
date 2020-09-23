@@ -11,7 +11,7 @@ const Favorites = (props) => {
 
     useEffect(() => {
 
-        axios.get("/api/account/getfavoriteproducts", {
+        axios.get(`${process.env.REACT_APP_DB_HOST}/api/account/getfavoriteproducts`, {
             headers: {
                 'x-auth-token': localStorage.getItem("c2c-token")
             }

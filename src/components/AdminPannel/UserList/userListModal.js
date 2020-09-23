@@ -13,7 +13,7 @@ function UserListModal({ closeHandler, userId, getUserList }) {
 
     useEffect(() => {
 
-        axios.get(`/api/admin/userdetails/${userId}`, {
+        axios.get(`${process.env.REACT_APP_DB_HOST}/api/admin/userdetails/${userId}`, {
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'
@@ -32,7 +32,7 @@ function UserListModal({ closeHandler, userId, getUserList }) {
     const updateHandler = () => {
         console.log("admin status", admin)
 
-        axios.post("/api/admin/updateuser",
+        axios.post(`${process.env.REACT_APP_DB_HOST}/api/admin/updateuser`,
             { userId, admin },
             {
                 headers: {

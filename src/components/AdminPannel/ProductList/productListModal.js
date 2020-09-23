@@ -13,7 +13,7 @@ function ProductListModal({ closeHandler, productId ,getProducts}) {
 
     useEffect(() => {
 
-        axios.get(`/api/admin/productdetails/${productId}`, {
+        axios.get(`${process.env.REACT_APP_DB_HOST}/api/admin/productdetails/${productId}`, {
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ function ProductListModal({ closeHandler, productId ,getProducts}) {
     }, [])
 
     const updateHandler=()=>{
-        axios.post("/api/admin/blockproduct", { id:productId }, {
+        axios.post(`${process.env.REACT_APP_DB_HOST}/api/admin/blockproduct`, { id:productId }, {
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'

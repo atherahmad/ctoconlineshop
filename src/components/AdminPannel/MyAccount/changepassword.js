@@ -37,7 +37,7 @@ export default function PasswordChange(props) {
                     'Content-Type': 'application/json'
                 }
             }
-            const response = await POST(`/api/admin/changepassword`, formData, config)
+            const response = await POST(`${process.env.REACT_APP_DB_HOST}/api/admin/changepassword`, formData, config)
             if (response.data.status === "success") {
                 editDisabler()
                 changeAlertBoxTitle("Password Changed")

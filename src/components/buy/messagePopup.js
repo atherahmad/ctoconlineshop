@@ -29,7 +29,7 @@ function ProductMessage(props) {
             'Content-Type': 'application/json'
           }
         }
-        let response = await POST("/api/messages/sendmessage", messageData, config)
+        let response = await POST(`${process.env.REACT_APP_DB_HOST}/api/messages/sendmessage`, messageData, config)
         if(response.data.status==="success") props.history.push("/messages")
       }
     return (

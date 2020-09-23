@@ -7,7 +7,7 @@ function Querries() {
 
     useEffect(() => {
 
-        axios.get("/api/admin/getquerries", {
+        axios.get(`${process.env.REACT_APP_DB_HOST}/api/admin/getquerries`, {
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'
@@ -22,7 +22,7 @@ function Querries() {
     const [showQuerryModal, setShowQuerryModal] = useState(false)
 
     const getData=()=>{
-        axios.get("/api/admin/getquerries", {
+        axios.get(`${process.env.REACT_APP_DB_HOST}/api/admin/getquerries`, {
             headers: {
                 'x-auth-token': localStorage.getItem('c2c-token'),
                 'Content-Type': 'application/json'
