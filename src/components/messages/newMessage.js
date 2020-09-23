@@ -21,7 +21,7 @@ const NewMessage = (props) => {
     const token = localStorage.getItem("c2c-token");
     const checkAuth = async () => {
       if (token) {
-        let response = await GET("api/auth/authenticated");
+        let response = await GET(`${process.env.REACT_APP_DB_HOST}/api/auth/authenticated`);
         console.log("response in authentication", response);
         if (response.data.status === "success") setAuth(true);
         else setAuth(false);

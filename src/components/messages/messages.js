@@ -15,21 +15,27 @@ const Messages = (props) => {
 
   let targetArray = [];
   useEffect(() => {
-    const confirmAuth = async () => {
-      let response = await CheckAuthentication();
-      if (response.data.status !== "success") props.history.push("/signin");
-    };
-    confirmAuth();
-
+    if (!localStorage.getItem("c2c-token"))
+      return props.history.push("/signin");
     getMessages();
-  });
+  }, []);
   const getMessages = async () => {
-    let response = await GET(
-      `${process.env.REACT_APP_DB_HOST}/api/messages/messageslist`
-    );
-    if (response.data.status === "success")
-      setConversations(response.data.data);
-    else props.history.push("/signin");
+    axios
+      .get(`${process.env.REACT_APP_DB_HOST}/api/messages/messageslist`, {
+        headers: {
+          "x-auth-token": localStorage.getItem("c2c-token"),
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        if (res.data.status === "success") setConversations(res.data.data);
+        else {
+          localStorage.removeItem("c2c-token");
+          localStorage.removeItem("c2c-profile");
+          props.history.push("/signin");
+        }
+      })
+      .catch((err) => err);
   };
 
   const setTargetConversation = (id) => setConversationId(id);
