@@ -230,7 +230,7 @@ const MyProfile = (props) => {
       const config = {
         headers: {
           "x-auth-token": localStorage.getItem("c2c-token"),
-          "Content-type": "application/json",
+          "Content-Type": "text/plain",
         },
       };
 
@@ -239,6 +239,7 @@ const MyProfile = (props) => {
       Object.keys(profile).forEach((key) => {
         if (key !== "profileImage") formData.append(key, profile[key]);
       });
+        
       let response = await IMGPOST(
         `${process.env.REACT_APP_DB_HOST}/api/uploads/profile`,
         formData,
