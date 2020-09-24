@@ -230,7 +230,7 @@ const MyProfile = (props) => {
       const config = {
         headers: {
           "x-auth-token": localStorage.getItem("c2c-token"),
-          "Content-type": "multipart/form-data",
+          "Content-type": "application/json",
         },
       };
 
