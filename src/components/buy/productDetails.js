@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ProductDetails = (props) => {
-
   const classes = useStyles();
   const { id, showModel, handleClose, url, status, getLastSeen } = props;
   const [product, setProduct] = useState("");
@@ -40,8 +39,6 @@ const ProductDetails = (props) => {
   const [showReportBox, setShowReportBox] = useState(false);
   const [showBlockBox, setShowBlockBox] = useState(false);
 
- 
-
   useEffect(() => {
     let config;
     if (localStorage.getItem("c2c-token"))
@@ -49,16 +46,15 @@ const ProductDetails = (props) => {
         headers: {
           "Content-Type": "application/json",
           "x-auth-token": localStorage.getItem("c2c-token"),
-        }
+        },
       };
-      
     else
       config = {
         headers: {
           "Content-Type": "application/json",
-        }
+        },
       };
-      if(url) alert("url and id", url , id)
+
     axios
       .get(
         url
@@ -79,7 +75,7 @@ const ProductDetails = (props) => {
       .catch((err) => err);
 
     return async () => {
-      if(!localStorage.getItem("c2c-profile")) return
+      if (!localStorage.getItem("c2c-profile")) return;
       const config = {
         headers: {
           "x-auth-token": localStorage.getItem("c2c-token"),
@@ -96,14 +92,14 @@ const ProductDetails = (props) => {
   }, []);
 
   let color = product
-  ? Color.filter((color) => color.id === product.color)[0].value
-  : null;
-let condition = product
-  ? Condition.filter((condition) => condition.id === product.condition)[0]
-      .value
-  : null;
+    ? Color.filter((color) => color.id === product.color)[0].value
+    : null;
+  let condition = product
+    ? Condition.filter((condition) => condition.id === product.condition)[0]
+        .value
+    : null;
 
-const [bgImage, setBgImage] = useState("noimage.png");
+  const [bgImage, setBgImage] = useState("noimage.png");
 
   const handleBgImage = (backgroundImage) => {
     setBgImage(backgroundImage);
@@ -135,7 +131,6 @@ const [bgImage, setBgImage] = useState("noimage.png");
       .catch((err) => err);
   };
 
-
   const soldHandler = (id) => {
     axios
       .post(
@@ -163,7 +158,6 @@ const [bgImage, setBgImage] = useState("noimage.png");
       .catch((err) => err);
   };
 
-
   const activateHandler = (id) =>
     axios
       .post(
@@ -189,7 +183,6 @@ const [bgImage, setBgImage] = useState("noimage.png");
         }
       })
       .catch((err) => err);
-
 
   const deleteHandler = (id) =>
     axios
@@ -362,7 +355,6 @@ const [bgImage, setBgImage] = useState("noimage.png");
           {...props}
         />
       ) : null}
-
     </div>
   );
 };

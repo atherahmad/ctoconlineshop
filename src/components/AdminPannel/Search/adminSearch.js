@@ -9,7 +9,6 @@ export default function AdminSearch({options, getData, searchData}) {
     setSearchCategory(options)
   },[])
 
-  const changeHandler=()=>console.log("changehandler called")
 
   const submitHandler = (e) => {
       e.preventDefault();
@@ -28,7 +27,7 @@ export default function AdminSearch({options, getData, searchData}) {
               name="searchText" 
               className="form-control" 
               placeholder="Type your Search here !"
-              onChange={changeHandler} />
+ />
           </div>
           <div className="col-lg-4 col-md-3 col-sm-12 p-2">
             <select className="form-control search-slt" 

@@ -138,7 +138,6 @@ const SellItems = (props) => {
           `${process.env.REACT_APP_DB_HOST}/api/buy/activeproductdetails/${id}`
         )
         .then((res) => {
-          console.log("response in sell item", res);
           setProduct(res.data.success);
           setEdit(true);
           for (let i = 1; i <= product.images.length; i++) {
@@ -231,8 +230,9 @@ const SellItems = (props) => {
     let config;
     if (images.length > 0) {
       const formData = new FormData();
-      let imageArray = images.map((value) => value.image);
-      imageArray.forEach((value) => formData.append("files", value));
+      let imagesArray = images.map((value) => value.image);
+
+      imagesArray.forEach((value) => formData.append("images", value));
       Object.keys(product).forEach((key) => formData.append(key, product[key]));
       config = {
         headers: {
@@ -242,7 +242,7 @@ const SellItems = (props) => {
       };
 
       const response = await IMGPOST(
-        `${process.env.REACT_APP_DB_HOST}/api/products/newproduct`,
+        `${process.env.REACT_APP_DB_HOST}/api/uploads/newproduct`,
         formData,
         config
       );

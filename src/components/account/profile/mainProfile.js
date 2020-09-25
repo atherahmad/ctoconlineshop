@@ -182,7 +182,6 @@ const MyProfile = (props) => {
   };
 
   const submitHandler = async (e) => {
-    console.log("submit handler called");
     e.preventDefault();
     if (
       !Object.keys(profile).every((key) => {
@@ -239,7 +238,6 @@ const MyProfile = (props) => {
       Object.keys(profile).forEach((key) => {
         if (key !== "profileImage") formData.append(key, profile[key]);
       });
-        
       let response = await IMGPOST(
         `${process.env.REACT_APP_DB_HOST}/api/uploads/profile`,
         formData,

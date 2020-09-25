@@ -57,7 +57,7 @@ const ItemCard = ({
               className="unitedImgBox"
               onClick={() => setTargetProduct(id, url, status)}
               style={{
-                backgroundImage: `url(${`http://localhost:5000/avatars/${images}`})`,
+                backgroundImage: `url(${images})`,
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
