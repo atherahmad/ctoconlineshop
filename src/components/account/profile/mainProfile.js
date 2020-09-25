@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./../styles.css";
 import GET from "../../lib/get";
 import FormData from "form-data";
 import { IMGPOST, POST } from "../../lib/post";
@@ -182,6 +181,7 @@ const MyProfile = (props) => {
   };
 
   const submitHandler = async (e) => {
+    console.log("submit handler called");
     e.preventDefault();
     if (
       !Object.keys(profile).every((key) => {
@@ -229,7 +229,7 @@ const MyProfile = (props) => {
       const config = {
         headers: {
           "x-auth-token": localStorage.getItem("c2c-token"),
-          "Content-Type": "text/plain",
+          "Content-type": "multipart/form-data",
         },
       };
 
@@ -239,7 +239,7 @@ const MyProfile = (props) => {
         if (key !== "profileImage") formData.append(key, profile[key]);
       });
       let response = await IMGPOST(
-        `${process.env.REACT_APP_DB_HOST}/api/uploads/profile`,
+        `${process.env.REACT_APP_DB_HOST}/api/uploads/editprofile`,
         formData,
         config
       );
@@ -265,7 +265,7 @@ const MyProfile = (props) => {
         },
       };
       let response = await POST(
-        `${process.env.REACT_APP_DB_HOST}/api/account/profile`,
+        `${process.env.REACT_APP_DB_HOST}/api/uploads/editprofile`,
         profile,
         config
       );
