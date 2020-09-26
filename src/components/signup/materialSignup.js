@@ -28,7 +28,7 @@ export default function MaterialSignup(props) {
   const [confirmPass, setconfirmPass] = useState("");
   let [inputErrors, setInputErrors] = useState("");
   const formData = { firstName, lastName, email, pass };
-  const [showAlert, setShowAlert] = useState(true);
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem("c2c-token")) {
