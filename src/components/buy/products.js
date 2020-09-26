@@ -54,9 +54,7 @@ export default function Products(props) {
                 title={product.title}
                 price={product.price}
                 id={product._id}
-                images={
-                  product.images.length > 0 ? product.images[0] : "noimage.png"
-                }
+                images={product.images.length > 0 ? product.images[0] : null}
                 url={
                   url
                     ? url

@@ -13,6 +13,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import PasswordReset from "../signin/resetModal";
 import ProductMessage from "./messagePopup";
 import ReportProduct from "../complaints/report";
+import NoImage from "../../images/noimage.png"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -99,7 +100,7 @@ const ProductDetails = (props) => {
         .value
     : null;
 
-  const [bgImage, setBgImage] = useState("noimage.png");
+  const [bgImage, setBgImage] = useState(NoImage);
 
   const handleBgImage = (backgroundImage) => {
     setBgImage(backgroundImage);

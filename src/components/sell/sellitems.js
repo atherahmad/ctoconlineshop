@@ -258,7 +258,7 @@ const SellItems = (props) => {
         },
       };
       const response = await POST(
-        `${process.env.REACT_APP_DB_HOST}/api/products/newproduct`,
+        `${process.env.REACT_APP_DB_HOST}/api/uploads/newproduct`,
         product,
         config
       );

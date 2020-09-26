@@ -3,6 +3,7 @@ import PictureSlider from "./pictureSlider";
 import { CheckAuthentication } from "../lib/auth";
 import "../styles/main.css";
 import { GlobalContextContext } from "../Context/contextApi";
+import NoImage from "../../images/noimage.png";
 
 const ProductDetailsForm = (props) => {
   const {
@@ -56,12 +57,15 @@ const ProductDetailsForm = (props) => {
 
       <div className="pd-row-1">
         <div className="largImage">
-          <img src={`${bgImage}`} alt="No Images available" />
+          <img src={bgImage ? bgImage : NoImage} alt="No Images available" />
         </div>
 
-        <div className="thumbNailImage">
-          <PictureSlider images={images} handleBgImage={handleBgImage} />
-        </div>
+        {images? <div className="thumbNailImage">
+          <PictureSlider
+            images={images}
+            handleBgImage={handleBgImage}
+          />
+        </div>:null}
       </div>
 
       <div className="content">

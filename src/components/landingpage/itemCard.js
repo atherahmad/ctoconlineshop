@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Slide from "react-reveal/Slide";
 import { POST } from "../lib/post";
 import { GlobalContextContext } from "../Context/contextApi";
+import NoImage from "../../images/noimage.png";
 
 const ItemCard = ({
   title,
@@ -57,10 +58,11 @@ const ItemCard = ({
               className="unitedImgBox"
               onClick={() => setTargetProduct(id, url, status)}
               style={{
-                backgroundImage: `url(${images})`,
+                backgroundImage: `url(${images ? images : NoImage})`,
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
+                cursor: "pointer",
               }}
             ></div>
             <div className="unitedContent">
