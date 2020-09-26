@@ -7,6 +7,7 @@ import "./style.css";
 import SignupForm from "./signupForm";
 import GET from "../lib/get";
 import { GlobalContextContext } from "../Context/contextApi";
+import AlertBox from "../AlertBox/alertBox";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,6 +28,7 @@ export default function MaterialSignup(props) {
   const [confirmPass, setconfirmPass] = useState("");
   let [inputErrors, setInputErrors] = useState("");
   const formData = { firstName, lastName, email, pass };
+  const [showAlert, setShowAlert] = useState(true);
 
   useEffect(() => {
     if (localStorage.getItem("c2c-token")) {
@@ -182,9 +184,8 @@ export default function MaterialSignup(props) {
         `${process.env.REACT_APP_DB_HOST}/api/auth/signup`,
         formData
       );
-      if (response.data.status === "success") {
-        props.history.push(`/signin`);
-      } else if (response.data.status === "failed")
+      if (response.data.status === "success") setShowAlert(true);
+      else if (response.data.status === "failed")
         setInputErrors({
           ...inputErrors,
           backend: {
@@ -208,6 +209,16 @@ export default function MaterialSignup(props) {
         confirmPass={confirmPass}
         pass={pass}
       />
+      {showAlert ? (
+        <AlertBox
+          simpleAlert={true}
+          alertBoxTitle={"Successfully Registered"}
+          alertBoxBody={
+            "We have sent you an email containing confirmation Link, please confirm your email first to login."
+          }
+          hideAlertBox={() => props.history.push(`/signin`)}
+        />
+      ) : null}
     </div>
   );
 }
