@@ -30,7 +30,7 @@ function AlertBox(props) {
     } else hideAlertBox();
   };
   return (
-    <div className="alertBox">
+    <div className="alertBox ">
       <div className="alertBox-head"></div>
       <div className="alertBox-head-title">{alertBoxTitle}</div>
 

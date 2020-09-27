@@ -156,14 +156,14 @@ const SellDetails = (props) => {
                     <div className=" boxRight">
                         <div >
                             <div className="d-flex justify-content-around mb-2">
-                                <ImageCard id={"1"} image={product.images ? product.images[0] : null} edit={product.images ? true : false} imageChangeHandler={imageChangeHandler} />
-                                <ImageCard id={"2"} image={product.images ? product.images[1] : null} edit={product.images ? true : false} imageChangeHandler={imageChangeHandler} />
-                                <ImageCard id={"3"} image={product.images ? product.images[2] : null} edit={product.images ? true : false} imageChangeHandler={imageChangeHandler} />
+                                <ImageCard id={"0"} image={product.images ? product.images[0] : null} edit={product.images ? true : false} imageChangeHandler={imageChangeHandler} />
+                                <ImageCard id={"1"} image={product.images ? product.images[1] : null} edit={product.images ? true : false} imageChangeHandler={imageChangeHandler} />
+                                <ImageCard id={"2"} image={product.images ? product.images[2] : null} edit={product.images ? true : false} imageChangeHandler={imageChangeHandler} />
                             </div>
                             <div className="d-flex justify-content-around mt-4">
-                                <ImageCard id={"4"} image={product.images ? product.images[3] : null} edit={product.images ? true : false} imageChangeHandler={imageChangeHandler} />
-                                <ImageCard id={"5"} image={product.images ? product.images[4] : null} edit={product.images ? true : false} imageChangeHandler={imageChangeHandler} />
-                                <ImageCard id={"6"} image={product.images ? product.images[5] : null} edit={product.images ? true : false} imageChangeHandler={imageChangeHandler} />
+                                <ImageCard id={"3"} image={product.images ? product.images[3] : null} edit={product.images ? true : false} imageChangeHandler={imageChangeHandler} />
+                                <ImageCard id={"4"} image={product.images ? product.images[4] : null} edit={product.images ? true : false} imageChangeHandler={imageChangeHandler} />
+                                <ImageCard id={"5"} image={product.images ? product.images[5] : null} edit={product.images ? true : false} imageChangeHandler={imageChangeHandler} />
                             </div>
                         </div>
                         {edit ?

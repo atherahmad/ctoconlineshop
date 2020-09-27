@@ -5,7 +5,7 @@ import axios from "axios";
 function EditProduct(props) {
   const id = props.match.params.id;
 
-  const editHandler = async (product, images) => {
+  const editHandler = async (product, oldImages, newImages) => {
     let blob = await fetch("/avatars/a1589803503629.jpeg").then((r) =>
       r.blob()
     );
@@ -15,22 +15,27 @@ function EditProduct(props) {
         "Content-type": "multipart/form-data",
       },
     };
-
     const formData = new FormData();
 
-    if (images.length > 0) {
-      let imageArray = images.map((value) => value.image);
-      imageArray.forEach((value) => formData.append("files", value));
+    if (newImages.length > 0) {
+      newImages.forEach((value) => {
+        if (
+          value.image.type === "image/jpeg" ||
+          value.image.type === "image/png"
+        )
+          formData.append("images", value.image, value.id);
+      });
     }
 
     Object.keys(product).forEach((key) => {
       if (key === "creator") formData.append(key, id);
       else formData.append(key, product[key]);
     });
+    formData.append("oldImages", JSON.stringify(oldImages.map(data=>data.image)));
 
     axios
       .post(
-        `${process.env.REACT_APP_DB_HOST}/api/account/editproduct`,
+        `${process.env.REACT_APP_DB_HOST}/api/uploads/editproduct`,
         formData,
         config
       )

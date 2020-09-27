@@ -17,13 +17,11 @@ const ImageCard = (props) => {
     reader.onloadend = (e) => {
       setImage(reader.result);
     };
+    console.log(e.target.id, "id in image card");
     props.imageChangeHandler({ image: e.target.files[0], id: e.target.id });
   };
   const inputHandler = (e) => {
     document.getElementById(props.id).click();
-  };
-  const deleteHandler = () => {
-    setImage("");
   };
 
   return (
@@ -53,28 +51,15 @@ const ImageCard = (props) => {
         </Form.File>
       </div>
       <div className="text-center" name="button holder">
-        {props.image ? (
-          props.edit ? (
-            <button
-              className="myRedCircleButton fa fa-pencil"
-              onClick={inputHandler}
-              type="button"
-            ></button>
-          ) : (
-            <button
-              className="myRedCircleButton fa fa-trash"
-              onClick={deleteHandler}
-              type="button"
-            ></button>
-          )
-        ) : (
-          <button
-            onClick={inputHandler}
-            className="myRedCircleButton fa fa-plus"
-            name="addButton"
-            type="button"
-          ></button>
-        )}
+        <button
+          className={
+            props.image
+              ? "myRedCircleButton fa fa-pencil"
+              : "myRedCircleButton fa fa-plus"
+          }
+          onClick={inputHandler}
+          type="button"
+        />
       </div>
     </div>
   );

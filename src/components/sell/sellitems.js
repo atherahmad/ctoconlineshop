@@ -25,7 +25,7 @@ const SellItems = (props) => {
   const [showSignin, setShowSignin] = useState(false);
   const [showReset, setShowReset] = useState(false);
   const [redirectAlertBox, setRedirectAlertBox] = useState(false);
-
+  const [tempImageArray, setTempImageArray] = useState([]);
   const [product, setProduct] = useState({
     title: "",
     category: "",
@@ -110,7 +110,10 @@ const SellItems = (props) => {
   };
 
   const proceedHandler = () => {
-    editHandler(product, images);
+    console.log("temp image mean new images array in procced", tempImageArray);
+    console.log(" image means old array", images);
+
+    editHandler(product, images, tempImageArray);
     setAlertBox(false);
   };
   const hideAlertBox = () => setAlertBox(false);
@@ -132,6 +135,7 @@ const SellItems = (props) => {
   const handleClose = () => setShowSignin(false);
 
   useEffect(() => {
+    let previousImages = [];
     if (id)
       axios
         .get(
@@ -139,15 +143,18 @@ const SellItems = (props) => {
         )
         .then((res) => {
           setProduct(res.data.success);
-          setEdit(true);
-          for (let i = 1; i <= product.images.length; i++) {
-            images.push({
-              id: i,
-              image: fetch(`/avatars/${product.images[i]}`).then((r) =>
-                r.blob()
-              ),
+          for (let i = 0; i < res.data.success.images.length; i++) {
+            previousImages.push({
+              id: `${i}`,
+              image: res.data.success.images[i],
             });
           }
+          console.log("previous images in use effect", previousImages);
+          setImages([...previousImages]);
+          setEdit(true);
+          console.log(images, "old imagesin use effect");
+          setTempImageArray(previousImages);
+          console.log(tempImageArray, "new images in use effect");
         })
         .catch((err) => err);
     setInputErrors(Errors);
@@ -180,13 +187,13 @@ const SellItems = (props) => {
     setAlertBox(true);
   };
 
-  const imageChangeHandler = (image) => {
-    if (images.length === 0) return setImages([image]);
-    const tempImageArray = [...images];
-    let index = tempImageArray.findIndex((key) => key.id === image.id);
-    if (index === -1) tempImageArray.push(image);
-    else tempImageArray[index] = { ...image };
-    setImages(tempImageArray);
+  const imageChangeHandler = (newImage) => {
+    if (tempImageArray.length === 0) tempImageArray.push(newImage);
+     else {
+      let index = tempImageArray.findIndex((data) => data.id === newImage.id);
+      if (index === -1) tempImageArray.push(newImage);
+      else tempImageArray[index] = newImage;
+    }
   };
 
   const newProductHandler = () => {
