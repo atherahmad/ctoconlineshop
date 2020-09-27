@@ -139,6 +139,8 @@ const Home = (props) => {
                 unAuthenticated={unAuthenticated}
                 lastSeenProducts={lastSeenProducts}
                 getLastSeen={getLastSeen}
+                
+
               />
             </div>
           </div>

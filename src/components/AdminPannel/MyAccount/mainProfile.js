@@ -181,7 +181,6 @@ const MyProfile = (props) => {
   };
 
   const submitHandler = async (e) => {
-    console.log("submit handler called");
     e.preventDefault();
     if (
       !Object.keys(profile).every((key) => {

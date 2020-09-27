@@ -110,9 +110,6 @@ const SellItems = (props) => {
   };
 
   const proceedHandler = () => {
-    console.log("temp image mean new images array in procced", tempImageArray);
-    console.log(" image means old array", images);
-
     editHandler(product, images, tempImageArray);
     setAlertBox(false);
   };
@@ -149,12 +146,9 @@ const SellItems = (props) => {
               image: res.data.success.images[i],
             });
           }
-          console.log("previous images in use effect", previousImages);
           setImages([...previousImages]);
           setEdit(true);
-          console.log(images, "old imagesin use effect");
           setTempImageArray(previousImages);
-          console.log(tempImageArray, "new images in use effect");
         })
         .catch((err) => err);
     setInputErrors(Errors);
@@ -189,25 +183,11 @@ const SellItems = (props) => {
 
   const imageChangeHandler = (newImage) => {
     if (tempImageArray.length === 0) tempImageArray.push(newImage);
-     else {
+    else {
       let index = tempImageArray.findIndex((data) => data.id === newImage.id);
       if (index === -1) tempImageArray.push(newImage);
       else tempImageArray[index] = newImage;
     }
-  };
-
-  const newProductHandler = () => {
-    setRedirectAlertBox(false);
-    setProduct({
-      title: "",
-      category: "",
-      condition: "",
-      quantity: "",
-      color: "",
-      price: "",
-      description: "",
-    });
-    setImages([]);
   };
 
   const submitHandler = async () => {
@@ -235,10 +215,9 @@ const SellItems = (props) => {
 
     if (showSignin) handleClose();
     let config;
-    if (images.length > 0) {
+    if (tempImageArray.length > 0) {
       const formData = new FormData();
-      let imagesArray = images.map((value) => value.image);
-
+      let imagesArray = tempImageArray.map((value) => value.image);
       imagesArray.forEach((value) => formData.append("images", value));
       Object.keys(product).forEach((key) => formData.append(key, product[key]));
       config = {
@@ -320,11 +299,10 @@ const SellItems = (props) => {
       ) : null}
       {redirectAlertBox ? (
         <AlertBox
-          alertBoxTitle="Scucessfully uploaded"
-          alertBoxBody="Do you want to upload another product?"
+          simpleAlert={true}
+          alertBoxTitle={"Congratulation!"}
+          alertBoxBody={"You have successfully uploaded your product."}
           hideAlertBox={redirectHandler}
-          proceedHandler={newProductHandler}
-          cancelButtonBody="No"
         />
       ) : null}
     </div>

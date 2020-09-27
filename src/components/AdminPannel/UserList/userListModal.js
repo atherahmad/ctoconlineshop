@@ -32,8 +32,6 @@ function UserListModal({ closeHandler, userId, getUserList }) {
   }, []);
 
   const updateHandler = () => {
-    console.log("admin status", admin);
-
     axios
       .post(
         `${process.env.REACT_APP_DB_HOST}/api/admin/updateuser`,

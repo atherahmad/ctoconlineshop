@@ -31,7 +31,10 @@ function EditProduct(props) {
       if (key === "creator") formData.append(key, id);
       else formData.append(key, product[key]);
     });
-    formData.append("oldImages", JSON.stringify(oldImages.map(data=>data.image)));
+    formData.append(
+      "oldImages",
+      JSON.stringify(oldImages.map((data) => data.image))
+    );
 
     axios
       .post(
@@ -49,7 +52,6 @@ function EditProduct(props) {
 
   return (
     <div>
-      {console.log("id in edit", id)}
       <SellItems id={id} {...props} editHandler={editHandler} />
     </div>
   );

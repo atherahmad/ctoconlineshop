@@ -29,8 +29,6 @@ function ProductList() {
     setAdminRedAlert(false);
   };
   const searchData = (searchText, searchCategory) => {
-    console.log(searchCategory, "in searach product");
-
     let filterType = "allproducts";
     if (searchCategory === "blockedproducts") filterType = "blocked";
     else if (searchCategory === "deletedproducts") filterType = "deleted";
@@ -123,7 +121,6 @@ function ProductList() {
                       setAdminRedAlert(true);
                       setTitle(data.title);
                       setCreator(data.creator);
-                      console.log(data);
                     }}
                   >
                     <td>{data.refId}</td>

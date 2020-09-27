@@ -15,7 +15,6 @@ function ProductMessage(props) {
       }
       const submitHandler = async () => {
         let senderId = JSON.parse(localStorage.getItem("c2c-profile")).id
-        console.log(title,productId,recipentId, "props in msg")
         const messageData = {
           productId,
           recipentId,

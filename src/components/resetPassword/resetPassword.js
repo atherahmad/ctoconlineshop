@@ -18,7 +18,6 @@ export default function ResetPassword(props) {
   useEffect(() => {
     const verifyParams = async () => {
       const { id, token } = props.match.params;
-      console.log("id ", id, " token ", token);
       const formData = {
         id,
         token,

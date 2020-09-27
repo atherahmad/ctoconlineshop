@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Products from "../buy/products";
+import { Link } from "react-router-dom";
+
 import GET from "../lib/get";
 
 const LatestProduct = (props) => {
@@ -29,6 +31,9 @@ const LatestProduct = (props) => {
             favoritHandler={favoritHandler}
           />
         </div>
+        <Link to="/buyitems">
+          <button className="btn">More Products >></button>
+        </Link>
       </div>
     </div>
   );

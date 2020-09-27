@@ -40,11 +40,11 @@ export default function SigninModal(props) {
   };
   const submitHandler = async (e) => {
     e.preventDefault();
-    if (errors.email.status) return console.log("you got error in email");
+    if (errors.email.status) return ;
     if (email === "" || pass === "")
       return setErrors({ ...errors, form: { ...errors.form, status: true } });
 
-    if (errors.form.status) return console.log("you got form error");
+    if (errors.form.status) return ;
     else {
       const formData = {
         email: email,

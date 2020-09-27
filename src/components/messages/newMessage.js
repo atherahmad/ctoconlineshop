@@ -22,7 +22,6 @@ const NewMessage = (props) => {
     const checkAuth = async () => {
       if (token) {
         let response = await GET(`${process.env.REACT_APP_DB_HOST}/api/auth/authenticated`);
-        console.log("response in authentication", response);
         if (response.data.status === "success") setAuth(true);
         else setAuth(false);
       }
@@ -34,7 +33,6 @@ const NewMessage = (props) => {
   };
   const submitHandler = async () => {
     let senderId = JSON.parse(localStorage.getItem("c2c-profile")).id;
-    console.log(props, "props in msg");
     const { productId, recipentId, title } = props;
     const messageData = {
       productId,
@@ -43,7 +41,6 @@ const NewMessage = (props) => {
       senderId,
       message,
     };
-    console.log("mesg data", messageData);
     const config = {
       headers: {
         "x-auth-token": localStorage.getItem("c2c-token"),
@@ -55,7 +52,6 @@ const NewMessage = (props) => {
       messageData,
       config
     );
-    console.log("response in msge", response);
   };
 
   const handleClick = (event) => {

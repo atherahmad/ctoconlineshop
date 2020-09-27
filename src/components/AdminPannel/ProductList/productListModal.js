@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../../styles/main.css";
-import NoImage from "../../../images/noimage.png"
+import NoImage from "../../../images/noimage.png";
 
 function ProductListModal({ closeHandler, productId, getProducts }) {
   const [product, setProduct] = useState(false);
   const [showUpdate, setShowUpdate] = useState(false);
-  const [images, setImages]=useState([])
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     axios
@@ -22,7 +22,7 @@ function ProductListModal({ closeHandler, productId, getProducts }) {
       .then((res) => {
         if (res.data.success) {
           setProduct(res.data.success);
-          setImages(res.data.success.images)
+          setImages(res.data.success.images);
         }
       })
       .catch((err) => err);
@@ -52,29 +52,30 @@ function ProductListModal({ closeHandler, productId, getProducts }) {
 
   return (
     <div className="adminRedBox">
-      {console.log("Product in admin", product)}
       <div className="adminRedBox-head"></div>
       <div className="active-message-text">
         <h1>{product.title}</h1>
       </div>
       <div style={{ height: "200px" }}>
-        {images.length>0
-          ? images.map((key) => (
-              <img
-                width="180px"
-                height="200px"
-                className="modalImageShadow"
-                src={`${key}`}
-                alt="No Image"
-              />
-            ))
-          : <img
+        {images.length > 0 ? (
+          images.map((key) => (
+            <img
               width="180px"
               height="200px"
               className="modalImageShadow"
-              src={NoImage}
+              src={`${key}`}
               alt="No Image"
-          />}
+            />
+          ))
+        ) : (
+          <img
+            width="180px"
+            height="200px"
+            className="modalImageShadow"
+            src={NoImage}
+            alt="No Image"
+          />
+        )}
       </div>
 
       <div className="adminPopupContent">

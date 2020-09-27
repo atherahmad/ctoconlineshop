@@ -45,7 +45,6 @@ const IfAuthenticated = async ({ children }) => {
         localStorage.removeItem("c2c-token");
         localStorage.removeItem("c2c-profile");
       });
-    console.log("response in authentication", response);
     if (response.data.status === "success") return children;
   }
 
@@ -68,10 +67,8 @@ const IfNotAuthenticated = async (props) => {
         localStorage.removeItem("c2c-token");
         localStorage.removeItem("c2c-profile");
       });
-    console.log(response);
     return null;
   }
-  console.log("accessed not authenticated");
   return props.children;
 };
 

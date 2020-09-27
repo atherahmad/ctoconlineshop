@@ -34,7 +34,6 @@ function SubCategories(props) {
 
   const searchHandler = (text, category) => {
     setFilteredProducts(false);
-    console.log("search handler called", text, "category", category);
     if (!text)
       axios
         .get(
@@ -47,7 +46,6 @@ function SubCategories(props) {
         )
         .then((res) => {
           if (res.data.success) {
-            console.log(res.data.products, "in search");
             setProducts(res.data.products);
           }
         })

@@ -43,7 +43,7 @@ const Messages = (props) => {
   const showPopUp = () => setShowConversation(true);
   const hidePopUp = () => setShowConversation(false);
   const deleteHandler = () => {
-    if (selectedArray.length < 1) return console.log("nothing to delete");
+    if (selectedArray.length < 1) return ;
     axios
       .post(
         `${process.env.REACT_APP_DB_HOST}/api/messages/deletemessages`,

@@ -45,12 +45,8 @@ const Contact = (props) => {
   const changeHandler = (e) => {
     setFormError(false);
     setMessage({ ...message, [e.target.name]: e.target.value });
-    console.log(message);
   };
 
-  useEffect(() => {
-    if (profile.auth) console.log("user is atuhenticated", profile.userId);
-  }, []);
   return (
     <div className="contact">
       <div className="container">

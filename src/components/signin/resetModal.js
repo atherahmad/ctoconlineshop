@@ -19,7 +19,7 @@ export default function PasswordReset(props) {
     setErrors(Errors);
   }, []);
   const resetPassword = async () => {
-    if (errors.resetPass.status) return console.log("you got error in email");
+    if (errors.resetPass.status) return ;
     if (email === "")
       return setErrors({ ...errors, form: { ...errors.form, status: true } });
     const formData = {

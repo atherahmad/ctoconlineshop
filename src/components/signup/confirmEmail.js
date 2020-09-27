@@ -5,7 +5,6 @@ const ConfirmEmail = (props) => {
 
   useEffect(() => {
     const { id, token } = props.match.params;
-    console.log("id ", id, " token ", token);
     const formData = {
       id,
       token,
@@ -24,7 +23,6 @@ const ConfirmEmail = (props) => {
       .then((res) => {
         if (res.data.success) {
           setText(res.data.success);
-          console.log(res.data);
         } else setText(res.data.failed);
       })
       .catch((err) => err);

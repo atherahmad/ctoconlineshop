@@ -18,7 +18,7 @@ const AdminNavbar = (props) => {
     const { profile, logoutHandler } = props
     return (
         <div>
-            <Navbar expand="lg">
+            <Navbar expand="lg" >
 
                 <Navbar.Brand className="navLogo">
                     <Link className="text-light text-uppercase" to="/">
