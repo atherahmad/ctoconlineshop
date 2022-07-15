@@ -31,7 +31,7 @@
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
-    "start": "env-cmd -e dev react-scripts start",
+    "start": "env-cmd -f .env react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "env-cmd -e prod react-scripts build",
