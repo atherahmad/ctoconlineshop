@@ -1,8 +1,8 @@
 #  CtoC Online Shop
 
 ## App link
-    https://vigorous-einstein-134bd7.netlify.app
-    
+[Visit the app](https://vigorous-einstein-134bd7.netlify.app)
+
 ## Objective
     - To build a Platform for customers where they can sell and buy products
     - To develop a full-Stack MERN APP
@@ -13,7 +13,7 @@
     - Frontend on Netlify
 
 ## Backend repo Link
-    https://github.com/atherahmad/finalprojectbackend
+[Visit backend repo](https://github.com/atherahmad/finalprojectbackend)
 
 ## Technologies
 
